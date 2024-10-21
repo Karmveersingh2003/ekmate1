@@ -1,0 +1,362 @@
+
+/* contact */
+#contact {
+    width: 90%;
+  }
+  
+  .contact_us {
+    margin-top: 3rem;
+    display: flex;
+    font-family: var(--ff-roboto);
+  }
+  
+  forms {
+    width: 50%;
+  }
+  
+  .cbox {
+    width: 45%;
+    margin-left: 70px;
+    padding: 10px 30px;
+  }
+  
+  .cbox-message {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .cbox-line {
+    width: 20%;
+    height: 0.2em;
+    background-color: #9575cd;
+    margin-bottom: 3em;
+    margin-top: 1em;
+  }
+  
+  .c_boxx a p {
+    color: white;
+    font-size: 1em;
+    font-weight: 100;
+    padding: 1rem;
+    padding: 0px 40px;
+  }
+  
+  .c_boxx a {
+    padding: 1em;
+    margin-bottom: 2em;
+    padding-left: 2em;
+    border: 0.1em solid #9575cd;
+    background-color: #9575cd;
+    color: white;
+    display: flex;
+    border-radius: 2em;
+    align-items: center;
+    border: #9575cd 0.1em solid;
+    font-size: 1em;
+  }
+  
+  .c_boxx a:hover {
+    background-color: white;
+    color: #9575cd;
+    transition: all 0.5s ease;
+  }
+  
+  .c_boxx i {
+    font-size: 38px;
+    margin-right: 10px;
+    /* margin-left: 0.5em; */
+  }
+  
+
+  @media (max-width: 1200px) {
+    .cbox {
+        width: 60%;
+        margin-left: 50px;
+    }
+    
+    .c_boxx a {
+        font-size: 0.9em;
+        padding-left: 1.5em;
+    }
+
+    .cbox-line {
+        width: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    .cbox {
+        width: 70%;
+        margin-left: 30px;
+    }
+
+    .c_boxx a {
+        font-size: 0.85em;
+        padding-left: 1em;
+    }
+
+    .cbox-line {
+        width: 30%;
+    }
+
+    .c_boxx i {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cbox {
+        width: 80%;
+        margin-left: 20px;
+    }
+
+    .cbox-message {
+        font-size: 1.1em;
+    }
+
+    .c_boxx a {
+        font-size: 0.8em;
+        padding-left: 0.8em;
+    }
+
+    .cbox-line {
+        width: 40%;
+    }
+
+    .c_boxx i {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cbox {
+        width: 90%;
+        margin-left: 10px;
+    }
+
+    .cbox-message {
+        font-size: 1em;
+    }
+
+    .c_boxx a {
+        font-size: 0.75em;
+        padding-left: 0.5em;
+    }
+
+    .cbox-line {
+        width: 50%;
+    }
+
+    .c_boxx i {
+        font-size: 24px;
+    }
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 0px 0px 7px 6px;
+    display: inline-block;
+  }
+  
+  input[type="submit"] {
+    background-color: #9575cd;
+    color: whitesmoke;
+    padding: 12px 50px;
+    border: 2px solid #9575cd;
+    border-radius: 100vmax;
+    cursor: pointer;
+    font-family: var(--ff-montserrat);
+    font-size: var(--fs-links-btns);
+  }
+  
+  input[type="submit"]:hover {
+    background-color: whitesmoke;
+    color: #9575cd;
+  }
+
+  @media screen and (max-width: 768px) {
+    input[type="submit"] {
+      padding: 10px 40px;
+      font-size: calc(var(--fs-links-btns) - 2px);
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    input[type="submit"] {
+      padding: 8px 30px;
+      font-size: calc(var(--fs-links-btns) - 4px);
+    }
+  }
+  
+  .cform {
+    background-color: #222;
+    padding: 1em;
+    border-radius: 0.5rem;
+   
+
+  }
+  
+  .ccol {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .crow-in {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .crow-message {
+    margin: 1rem;
+  }
+  
+  .crow-message div {
+    width: 20%;
+    display: block;
+    height: 1em;
+    border-bottom: 3px solid #9575cd;
+  }
+  
+  .ccol-left {
+    margin: 1em;
+    width:89%;
+  }
+  
+  .ccol {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+  }
+  @media (max-width: 480px) {
+    .ccol {
+        width: 100%;
+    }
+    .cform {
+      background-color: #222;
+      margin-bottom: 50px;
+      width: 260px !important;
+      border-radius: 0.5rem;
+    }
+
+    .crow-message div {
+        width: 60%;
+    }
+}
+
+
+@media (max-width:570px){
+  .ccol {
+    width: 100%;
+}
+.cform {
+  background-color: #222;
+  margin-bottom: 50px;
+  
+}
+
+.crow-message div {
+    width: 60%;
+}
+}
+
+@media (max-width:630px){
+  .ccol {
+    width: 100%;
+}
+.cform {
+  margin-bottom: 50px;
+ 
+}
+
+.crow-message div {
+    width: 60%;
+}
+}
+
+  @media (min-width: 768px) {
+    .ccol {
+        width: 50%; /* Adjusts column width for tablets */
+    }
+
+    .cform {
+      background-color: #222;
+      margin-bottom: 50px;
+     
+    }
+    
+  .crow-message {
+    margin: 5rem;
+  }
+
+    .crow-message div {
+        width: 50%; /* Adjusts width for tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .ccol {
+        width: 25%; /* Adjusts column width for larger screens */
+    }
+
+    .crow-message div {
+        width: 20%; /* Adjusts width for larger screens */
+    }
+    
+}
+
+  #name {
+    width: 90%;
+    margin: 1em;
+  }
+  
+  #email {
+    width: 90%;
+    margin: 1em;
+  }
+  
+  .crow:after,
+  .crow-s::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .crow-s {
+    margin: 1em;
+    color: #9575cd;
+  }
+
+  @media (max-width: 768px) {
+    #name,
+    #email {
+        width: 100%;
+    }
+
+    .crow-s {
+        margin: 0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    #name,
+    #email {
+        width: 100%;
+        margin: 0.5em;
+    }
+
+    .crow-s {
+        margin: 0.25em;
+    }
+}
+  
