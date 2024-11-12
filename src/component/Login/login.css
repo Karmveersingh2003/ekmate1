@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
-body, input{
-    font-family: 'Poppins', sans-serif;
-}
 
 .containers{
     position: absolute;
@@ -60,7 +52,7 @@ form{
     padding: 0 5rem;
     overflow: hidden;
     grid-column: 1/2;
-     margin-top: 100px ;
+   
     grid-row: 1/2;
     transition: 0.2s 0.7s ease-in-out;
     
@@ -225,6 +217,7 @@ form.sign-up-forms{
     opacity: 1;
 }
 
+
 @media (max-width:870px){
     .containers{
         min-height: 800px;
@@ -308,7 +301,29 @@ form.sign-up-forms{
         transform: translate(-50%, 0);
         left: 50%;
     }
+  
+form{
+    padding: 0 1.5rem;
+    margin-top: -29px ;
+}
 
+.image{
+    display: none;
+}
+.panel .content{
+    padding: 0.5rem 1rem;
+}
+.containers::before{
+    bottom: 72%;
+    left: 50%;
+}
+.containers.sign-up-mode::before{
+    bottom: 28%;
+    left: 50%;
+}
+.containers{
+    margin-top: 100px;
+}
 
 }
 
@@ -333,4 +348,40 @@ form.sign-up-forms{
         bottom: 28%;
         left: 50%;
     }
+    .containers{
+        margin-top: 100px;
+    }
+}
+.otp-verify-email{
+    width: 150px;
+    height: 49px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: #9575cd;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+.otp-verify-email:hover{
+    background-color: #9575cd;
+}
+.otp-verify-email .transparent{
+    margin: 0;
+    background: none;
+    border: 2px solid #fff;
+    width: 130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.otp-heading{
+    font-size: larger;
+    font-weight: bolder;
+    padding-top: 150px;
+    border: 25px solid red;
+    color: red;
+margin-left: 750px;
 }

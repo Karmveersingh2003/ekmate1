@@ -4,6 +4,7 @@ import Home from './component/Home/Home';
 import Navbar from './component/Navbar/Navbar';
 import Contactus from './component/ContactUs/Contactus';
 import Login from './component/Login/Login';
+import OtpInput from './component/Login/otp-login/OtpInput';
 
 function App() {
   return (
@@ -11,13 +12,14 @@ function App() {
     <Router>
         
       
-{/*          
-           <Navbar/> */}
+         
+           <Navbar/>
          <Routes>
            <Route index element={<Home/>}></Route>  
            <Route path='/*' element={<h1>error page</h1>}></Route>
            <Route path='/contact' element={<Contactus/>}></Route>
            <Route path='/login' element={<Login/>}></Route>
+           <Route path='/otp' element={<OtpInput/>}></Route>
           
            
          </Routes>

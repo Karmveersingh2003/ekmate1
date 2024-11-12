@@ -1,90 +1,126 @@
-import React from 'react'
-import "./contact.css"
-import "../Home/home.css"
+import React, { useState, useEffect } from 'react';
+import "./contact.css";
+import "../Home/home.css";
 
 export default function Contactus() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [role, setRole] = useState('Select Role');
+  const [message, setMessage] = useState('');
+  const [response, setResponse] = useState(null);
+
+  useEffect(() => {
+    if (response) {
+      alert("Your message has been sent successfully!");
+    }
+  }, [response]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const formData = { name, email, role, message };
+
+    try {
+      const res = await fetch('YOUR_BACKEND_API_URL', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await res.json();
+      setResponse(result);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setResponse(null);
+    }
+  };
+
   return (
-   <>
-    <section id="contact">
-            <div class="title">
-                <h1 class="font-color">Contact Us</h1>
-                <div class="line"></div>
+    <>
+      <section id="contact">
+        <div className="title">
+          <h1 className="font-color">Contact Us</h1>
+          <div className="line"></div>
+        </div>
+        <div className="contact_us">
+            <div id='send_us_message_form'>
+          <form className="cform" onSubmit={handleSubmit}>
+            <div className="crow-message">
+              <h1 className="color">Send us a message</h1>
+              <div></div>
             </div>
-            <div class="contact_us">
-                <forms class="cform" action="" method="post">
-                    <div class="crow-message">
-                        <h1 class="color">Send us a message</h1>
-                        <div></div>
-                    </div>
-                    <div class="crow-in">
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your name"
-                        />
-                    </div>
-                        <input
-                            type="text"
-                            id="email"
-                            name="email"
-                            placeholder="Your Email id"
-                        />
-                    <div class="crow">
-                        <div class="ccol-left">
-                            <select name="country" id="country" >
-                             <option value="Select Role">Select Role</option>
-                                <option value="India">Student</option>
-                                <option value="Russia">Faculty</option>
-                                <option value="usa">Admin</option>
-                                <option value="Japan">Other</option>
-                               
-                               
-                            </select>
-                        </div>
-                    </div>
-                    <div class="crow">
-                        <div class="ccol-left">
-                            <textarea
-                                type="text"
-                                id="remarks"
-                                name="remarks"
-                                placeholder="Your Message/Query......"
-                                // style="height: 150px"
-                            ></textarea>
-                        </div>
-                    </div>
-                    <input class="crow-s" type="submit" value="Send Query" />
-                </forms>
-                <div class="cbox">
-                    <div>
-                        <p class="cbox-message">
-                            Prefer some other way ?<br />Reach us by using the
-                            details given below
-                        </p>
-                        <div class="cbox-line"></div>
-                    </div>
-                    <div class="c_boxx">
-                        <a href="mailto:abc@gmail.com"
-                            ><i class="fa fa-envelope"></i>
-                            Mail: EkMate@support.com
-                        </a>
-                    </div>
-                    <div class="c_boxx">
-                        <a href="tel:+91-12345-67890"
-                            ><i class="fa fa-phone"></i>
-                            Phone: (+91) 12345-67890
-                        </a>
-                    </div>
-                    <div class="c_boxx">
-                        <a href="#"
-                            ><i class="fa fa-map-marker"></i>
-                            Location: NH-62 Road,Jodhpur,India
-                        </a>
-                    </div>
-                </div>
+            
+            <div className="crow-in">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
-        </section>
-   </>
-  )
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Your Email id"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <div className="crow">
+              <div className="ccol-left">
+                <select
+                  name="country"
+                  id="country"
+                  value={role}
+                  onChange={(e) => setRole(e.target.value)}
+                >
+                  <option value="Select Role">Select Role</option>
+                  <option value="Student">Student</option>
+                  <option value="Faculty">Faculty</option>
+                  <option value="Admin">Admin</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div className="crow">
+              <div className="ccol-left">
+                <textarea
+                  id="remarks"
+                  name="remarks"
+                  placeholder="Your Message/Query......"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                ></textarea>
+              </div>
+            </div>
+            <input className="crow-s" type="submit" value="Send Query" />
+          </form>
+          </div>
+          <div className="cbox">
+            <p className="cbox-message">
+              Prefer some other way? <br />
+              Reach us by using the details given below
+            </p>
+            <div className="cbox-line"></div>
+            <div className="c_boxx">
+              <a href="mailto:abc@gmail.com">
+                <i className="fa fa-envelope"></i> Mail: EkMate@support.com
+              </a>
+            </div>
+            <div className="c_boxx">
+              <a href="tel:+91-12345-67890">
+                <i className="fa fa-phone"></i> Phone: (+91) 12345-67890
+              </a>
+            </div>
+            <div className="c_boxx">
+              <a href="#">
+                <i className="fa fa-map-marker"></i> Location: NH-62 Road, Jodhpur, India
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

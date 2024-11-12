@@ -121,7 +121,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-{/* jiet vedio Section */}
+      {/* jiet vedio Section */}
       <section>
         <div className="title">
           <h1 className="dark">About the College</h1>
@@ -145,22 +145,23 @@ export default function Home() {
       </section>
       {/* jiet marketing Section */}
       <section>
-      <div className="title">
+        <div className="title">
           <h1 className="dark"> The College’s Environment</h1>
           <div className="line"></div>
         </div>
 
-      <div id='jietmp4'>
-        <video src={jietmp4} autoPlay loop muted />
-      </div>
+        <div id='jietmp4'>
+          <video src={jietmp4} autoPlay loop muted />
+        </div>
 
-       <div className="title">
+        <div className="title">
           <h1 className="dark"> Campus Life & Facilities </h1>
           <div className="line"></div>
         </div>
 
-        
-        </section>
+
+      </section>
+
     </>
   );
 }

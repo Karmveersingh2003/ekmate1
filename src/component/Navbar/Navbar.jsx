@@ -2,7 +2,16 @@ import React, { useState,useEffect } from 'react';
 import "./navbar.css"
 import { FaRegMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa6";
+import menubtn from "../Home/img/menu-btn.png"
+
+
 export default function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const [theme,setTheme]=useState(false);
   
 
@@ -15,6 +24,7 @@ export default function Navbar() {
       }else{
           document.body.classList.remove("dark");
       }
+      
   })
   
   return (
@@ -25,12 +35,12 @@ export default function Navbar() {
           <a href="#home" style={{ display: 'flex', alignItems: 'center' }}>
             <img
               className="img2"
-              src="./img/mountain.png"
+              src=""
               width="40"
               style={{ margin: '-25px -10px -25px -20px' }}
-              alt="Mountain"
+              alt="Logo"
             />
-            <h1 className="logo">&nbsp;ADVENTURE</h1>
+            <h1 className="logo">&nbsp;EkMate</h1>
           </a>
         </span>
         <ul className="nav-links">
@@ -60,16 +70,31 @@ export default function Navbar() {
             <div>
               <input type="checkbox" className="checkbox dark" id="checkbox" />
               <label htmlFor="checkbox" className="label">
-              <button onClick={handleClick}>{theme?"Light":"Dark"}</button>
+              <button onClick={handleClick}>{theme? <FaRegMoon/>:<FaSun/>}</button>
                 <i className="fa fa-moon-o"><FaRegMoon/></i>
                 <i className="fa fa-sun-o"><FaSun/></i>
-                {/* <div className="ball"></div> */}
+                <div className="ball"></div>
               </label>
             </div>
           </li>
         </ul>
-        <img src="./img/menu-btn.png" alt="Menu Button" className="menu-btn" />
         
+         <img
+        src={menubtn}
+        alt="Menu Button"
+        className="menu-btn"
+        onClick={toggleMenu}
+      />
+
+<ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/login">login</a></li>
+        <li><a href="#quad">Section 4</a></li>
+        <li><a href="#quint">Section 5</a></li>
+        <li><a href="#hex">Section 6</a></li>
+        <li><a href="#hept">Section 7</a></li>
+      </ul>
       </nav>
 
   </>
