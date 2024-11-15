@@ -87,7 +87,7 @@ export default function Login() {
             {error && <span className='otp-error'>{error}</span>}
             <div id='verify_login'>
               <button onClick={handleEmailVerification} className='otp-verify-email solid'>
-                {loading ? <ColorRing color="#fff" height={50} width={50} /> : 'Verify Email'}
+                {loading ? <ColorRing color="#fff" height={50} width={50} /> : 'Verify Otp'}
               </button>
               <input onClick={handleEmailVerification} type="submit" value="Login" className="button solid" />
             </div>
@@ -152,13 +152,13 @@ export default function Login() {
                 <>
                   <form className="sign-in-form">
                     <h2 className="titles">Sign in</h2>
-                    <div className="input-fields">
+                    {/* <div className="input-fields">
                       <i className="fas fa-user"></i>
-                      <input type="text" placeholder="Phone Number" />
-                    </div>
+                      <input type="text" placeholder="" />
+                    </div> */}
                     <div className="input-fields">
                       <i className="fas fa-lock"></i>
-                      <input type="password" placeholder="College Email" />
+                      <input type="" placeholder="College Email/Phone Number" />
                     </div>
                     <input onClick={handleOtpLoginClick} type="submit" value="Login" className="button solid" />
                     
@@ -172,7 +172,7 @@ export default function Login() {
                     </div>
                     <div className="input-fields">
                       <i className="fas fa-lock"></i>
-                      <input type="number" placeholder="Registration Number" />
+                      <input type="" placeholder="Registration Number" />
                     </div>
                     <div className="input-fields">
                       <i className="fas fa-envelope"></i>
@@ -180,7 +180,7 @@ export default function Login() {
                     </div>
                     <div className="input-fields">
                       <i className="fas fa-lock"></i>
-                      <input type="text" placeholder="Branch" />
+                      <input type="" placeholder="Branch" />
                     </div>
                     <div className="input-fields">
                       <i className="fas fa-lock"></i>

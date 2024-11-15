@@ -53,7 +53,7 @@ export default function Home() {
               <a href="#" className="ctn">All Details</a>
             </article>
             <article className="card col">
-              <img src={faculty} alt="Walking holidays" />
+              <img className="card-img" src={faculty} alt="Walking holidays" />
               <h4 className="dark">For Faculties</h4>
               <p className="font-color">
                 Join small guided group walks, enjoy a challenging trek, or a luxury private guided walk which can be made especially for you.
@@ -61,7 +61,7 @@ export default function Home() {
               <a href="#" className="ctn">All Details</a>
             </article>
             <article className="card col">
-              <img src={admin} alt="Andaman Beaches" />
+              <img className="card-img" src={admin} alt="Andaman Beaches" />
               <h4 className="dark">For Admins</h4>
               <p className="font-color">
                 Diving in Andaman Beaches is exceptional. The coastal belt surroundings are one of the richest coral reef ecosystems in the world.
@@ -95,7 +95,7 @@ export default function Home() {
           </div>
           <div className="row">
             <article className="card col">
-              <img className="card-img" src={bustrack} alt="Everest camp trek" />
+              <img  src={bustrack}  />
               <h4 className="dark">Real-time Bus Tracking</h4>
               <p className="font-color">
                 “See where your bus is in real-time and get accurate arrival times.”
@@ -103,7 +103,7 @@ export default function Home() {
 
             </article>
             <article className="card col">
-              <img src={eventbased} alt="Walking holidays" />
+              <img  src={eventbased} />
               <h4 className="dark">Daily and Event-based Schedules</h4>
               <p className="font-color">
                 “Access daily schedules or find buses for special college events".
@@ -111,7 +111,7 @@ export default function Home() {
 
             </article>
             <article className="card col">
-              <img src={adminpannel} alt="Andaman Beaches" />
+              <img  src={adminpannel}  />
               <h4 className="dark">Admin Panel</h4>
               <p className="font-color">
                 “Admins can effortlessly update schedules, ensuring everyone is up to date.”
@@ -154,10 +154,10 @@ export default function Home() {
           <video src={jietmp4} autoPlay loop muted />
         </div>
 
-        <div className="title">
+        {/* <div className="title">
           <h1 className="dark"> Campus Life & Facilities </h1>
           <div className="line"></div>
-        </div>
+        </div> */}
 
 
       </section>

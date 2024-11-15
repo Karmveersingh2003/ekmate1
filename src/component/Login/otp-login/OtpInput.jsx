@@ -82,7 +82,7 @@ const OtpLogin = ({ onLogin }) => {
                             <OTPInput
                                 value={otp.join('')}
                                 onChange={(value)=> setOtp(value.split(''))}
-                                numInputs={4}
+                                numInputs={6}
                                 isInputNum
                                 inputStyle={{
                                     width: '3rem',

@@ -145,6 +145,7 @@
 
     .cbox-message {
         font-size: 1em;
+        margin-left: 25px;
     }
 
     .c_boxx a {
@@ -154,6 +155,7 @@
 
     .cbox-line {
         width: 50%;
+        margin-left: 25px;
     }
 
     .c_boxx i {
@@ -230,6 +232,8 @@
   
   .crow-message {
     margin: 1rem;
+    margin-left: 60px;
+  
   }
   
   .crow-message div {
@@ -339,6 +343,7 @@
   #country{
      width: 345px;
      margin-right: 14px;
+     color: #686868e8;
   }
   #remarks{
    height: 100px;

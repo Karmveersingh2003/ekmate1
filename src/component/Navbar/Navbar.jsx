@@ -80,6 +80,7 @@ export default function Navbar() {
         </ul>
         
          <img
+         height={20}
         src={menubtn}
         alt="Menu Button"
         className="menu-btn"

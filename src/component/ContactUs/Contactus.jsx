@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import "./contact.css";
 import "../Home/home.css";
+import { FiMail } from "react-icons/fi";
+import { IoIosPhonePortrait } from "react-icons/io";
+import { FaMapLocationDot } from "react-icons/fa6";
+
+
 
 export default function Contactus() {
   const [name, setName] = useState('');
@@ -54,7 +59,7 @@ export default function Contactus() {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Your name"
+                placeholder="Your Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -63,7 +68,7 @@ export default function Contactus() {
               type="text"
               id="email"
               name="email"
-              placeholder="Your Email id"
+              placeholder="Your Email Id"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -105,17 +110,17 @@ export default function Contactus() {
             <div className="cbox-line"></div>
             <div className="c_boxx">
               <a href="mailto:abc@gmail.com">
-                <i className="fa fa-envelope"></i> Mail: EkMate@support.com
+                <i className="fa fa-envelope"><FiMail/></i> Mail: ekmate@support.com
               </a>
             </div>
             <div className="c_boxx">
               <a href="tel:+91-12345-67890">
-                <i className="fa fa-phone"></i> Phone: (+91) 12345-67890
+                <i className="fa fa-phone"><IoIosPhonePortrait/></i> Phone: (+91) 12345-67890
               </a>
             </div>
             <div className="c_boxx">
               <a href="#">
-                <i className="fa fa-map-marker"></i> Location: NH-62 Road, Jodhpur, India
+                <i className="fa fa-map-marker"><FaMapLocationDot/></i> Location: NH-62 Road, Jodhpur, India
               </a>
             </div>
           </div>
