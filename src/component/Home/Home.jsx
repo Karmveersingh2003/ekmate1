@@ -1,25 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './home.css';
-import "../Navbar/navbar.css"
-import admin from "./img/admins.jpg"
-import student from "./img/students.jpg"
-import faculty from "./img/faculty.jpg"
-import bustrack from "./img/bustrack.webp"
-import eventbased from "./img/eventbased.avif"
-import adminpannel from "./img/adminpannel.webp"
-import Jiet from "./img/jiet.jpeg"
-import jietmp4 from "./img/jiet_mp4.mp4"
-
-
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; // Import AOS
+import "../Navbar/navbar.css";
+import admin from "./img/admins.jpg";
+import student from "./img/students.jpg";
+import faculty from "./img/faculty.jpg";
+import bustrack from "./img/bustrack.webp";
+import eventbased from "./img/eventbased.avif";
+import adminpannel from "./img/adminpannel.webp";
+import Jiet from "./img/jiet.jpeg";
+import jietmp4 from "./img/jiet_mp4.mp4";
 
 export default function Home() {
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      easing: 'ease-in-out', // Easing function
+      once: true, // Whether animation should happen only once
+    });
+  }, []);
 
   return (
     <>
-
       {/* Header */}
       <header id="home">
-        <div className="header-content">
+        <div className="header-content" data-aos="fade-down">
           <h2 id="quote">Welcome To EkMate </h2>
           <div className="line"></div>
           <h1>Your One-Stop Solution For Campus Transportation Management </h1>
@@ -39,12 +46,12 @@ export default function Home() {
       {/* Events Section */}
       <section className="events" id="events">
         <div className="container">
-          <div className="title">
+          <div className="title" data-aos="fade-up">
             <h1 className="dark">Upcoming Events</h1>
             <div className="line"></div>
           </div>
           <div className="row">
-            <article className="card col">
+            <article className="card col" data-aos="zoom-in">
               <img className="card-img" src={student} alt="Everest camp trek" />
               <h4 className="dark">For Students</h4>
               <p className="font-color">
@@ -52,7 +59,7 @@ export default function Home() {
               </p>
               <a href="#" className="ctn">All Details</a>
             </article>
-            <article className="card col">
+            <article className="card col" data-aos="zoom-in" data-aos-delay="200">
               <img className="card-img" src={faculty} alt="Walking holidays" />
               <h4 className="dark">For Faculties</h4>
               <p className="font-color">
@@ -60,7 +67,7 @@ export default function Home() {
               </p>
               <a href="#" className="ctn">All Details</a>
             </article>
-            <article className="card col">
+            <article className="card col" data-aos="zoom-in" data-aos-delay="400">
               <img className="card-img" src={admin} alt="Andaman Beaches" />
               <h4 className="dark">For Admins</h4>
               <p className="font-color">
@@ -74,60 +81,58 @@ export default function Home() {
 
       {/* Explore Section */}
       <section className="explore" id="explore">
-        <div className="explore-content">
+        <div className="explore-content" data-aos="fade-up">
           <h1>EXPLORE THE EkMate</h1>
           <div className="line"></div>
           <p>
-            “Effortless College Commutes: Your Bus Schedules at Your Fingertips!""  <br /> <br />
-            “Track your bus, plan your commute, and never miss a ride with our
-            real-time bus management system."<br /></p> <br />
-
+            “Effortless College Commutes: Your Bus Schedules at Your Fingertips!” <br /> <br />
+            “Track your bus, plan your commute, and never miss a ride with our real-time bus management system." <br />
+          </p>
+          <br />
           <a href="#" className="ctn">Download App</a>
         </div>
       </section>
 
-      {/* Events Section */}
+      {/* Key Features Section */}
       <section className="events" id="events">
         <div className="container">
-          <div className="title">
+          <div className="title" data-aos="fade-up">
             <h1 className="dark">Key Features</h1>
             <div className="line"></div>
           </div>
           <div className="row">
-            <article className="card col">
-              <img  src={bustrack}  />
+            <article className="card col" data-aos="flip-left">
+              <img src={bustrack} alt="Real-time Bus Tracking" />
               <h4 className="dark">Real-time Bus Tracking</h4>
               <p className="font-color">
                 “See where your bus is in real-time and get accurate arrival times.”
               </p>
-
             </article>
-            <article className="card col">
-              <img  src={eventbased} />
+            <article className="card col" data-aos="flip-left" data-aos-delay="200">
+              <img src={eventbased} alt="Daily and Event-based Schedules" />
               <h4 className="dark">Daily and Event-based Schedules</h4>
               <p className="font-color">
-                “Access daily schedules or find buses for special college events".
+                “Access daily schedules or find buses for special college events.”
               </p>
-
             </article>
-            <article className="card col">
-              <img  src={adminpannel}  />
+            <article className="card col" data-aos="flip-left" data-aos-delay="400">
+              <img src={adminpannel} alt="Admin Panel" />
               <h4 className="dark">Admin Panel</h4>
               <p className="font-color">
                 “Admins can effortlessly update schedules, ensuring everyone is up to date.”
               </p>
-
             </article>
           </div>
         </div>
       </section>
-      {/* jiet vedio Section */}
+
+      {/* About the College */}
       <section>
-        <div className="title">
+        <div className="title"  data-aos="fade-up">
           <h1 className="dark">About the College</h1>
           <div className="line"></div>
         </div>
-        <div id='about_college_main'>
+        <div id='about_college_main' data-aos="fade-right">
           <div id='about_college_img'>
             <img src={Jiet} alt="" srcset="" />
           </div>
@@ -143,27 +148,34 @@ export default function Home() {
         </div>
 
       </section>
-      {/* jiet marketing Section */}
-      <section>
-        <div className="title">
-          <h1 className="dark"> The College’s Environment</h1>
+      {/* <section>
+        <div className="title" data-aos="fade-up">
+          <h1 className="dark">About the College</h1>
           <div className="line"></div>
         </div>
+        <div id="about_college_main" data-aos="fade-right">
+          <div id="about_college_img">
+            <img src={Jiet} alt="JIET" />
+          </div>
+          <div id="about_college_paragraph">
+            <p>
+              JIET, established in 2003, is one of the leading groups in the field of education and health care located in western Rajasthan. It caters to stakeholders (students and patients) from all over the nation.
+              ...
+            </p>
+          </div>
+        </div>
+      </section> */}
 
-        <div id='jietmp4'>
+      {/* Video Section */}
+      <section>
+        <div className="title" data-aos="fade-up">
+          <h1 className="dark">The College’s Environment</h1>
+          <div className="line"></div>
+        </div>
+        <div id="jietmp4" data-aos="zoom-in">
           <video src={jietmp4} autoPlay loop muted />
         </div>
-
-        {/* <div className="title">
-          <h1 className="dark"> Campus Life & Facilities </h1>
-          <div className="line"></div>
-        </div> */}
-
-
       </section>
-
     </>
   );
 }
-
-

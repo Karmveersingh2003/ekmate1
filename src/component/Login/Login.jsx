@@ -61,7 +61,7 @@ export default function Login() {
 
     const handleOTPVerification = () => {
       const enteredOTP = otp.join('');
-      if (/^\d{4}$/.test(enteredOTP)) {
+      if (/^\d{6}$/.test(enteredOTP)) {
         const username = email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1);
         onLogin(username);
       } else {
@@ -73,12 +73,7 @@ export default function Login() {
       <div className='otp-div'>
         {!isEmailVerified ? (
           <>
-            <h1 className='otp-heading'>Enter Your Email:</h1>
-            <input
-              type='text'
-              placeholder='test@example.com'
-             
-            />
+            
             <div className="input-fields">
                       <i className="fas fa-lock"></i>
                       <input type="Text" placeholder="College Email"  value={email}
@@ -99,7 +94,7 @@ export default function Login() {
               <OTPInput
                 value={otp.join('')}
                 onChange={(value) => setOtp(value.split(''))}
-                numInputs={4}
+                numInputs={6}
                 isInputNum
                 inputStyle={{
                   width: '3rem',

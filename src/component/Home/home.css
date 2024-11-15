@@ -362,6 +362,12 @@ header {
   align-items: end;
   justify-content: center;
 }
+@media (max-width: 480px) {
+  header {
+    width: 100vw;
+  height: 101vh;
+  }
+}
 
 .header-content {
   font-family: var(--ff-lora);
