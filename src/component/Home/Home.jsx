@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import './home.css';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS
@@ -21,6 +21,15 @@ export default function Home() {
       once: true, // Whether animation should happen only once
     });
   }, []);
+  
+  // FAQs
+  // FAQ Accordion State
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  // Toggle Active FAQ
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   return (
     <>
@@ -148,23 +157,7 @@ export default function Home() {
         </div>
 
       </section>
-      {/* <section>
-        <div className="title" data-aos="fade-up">
-          <h1 className="dark">About the College</h1>
-          <div className="line"></div>
-        </div>
-        <div id="about_college_main" data-aos="fade-right">
-          <div id="about_college_img">
-            <img src={Jiet} alt="JIET" />
-          </div>
-          <div id="about_college_paragraph">
-            <p>
-              JIET, established in 2003, is one of the leading groups in the field of education and health care located in western Rajasthan. It caters to stakeholders (students and patients) from all over the nation.
-              ...
-            </p>
-          </div>
-        </div>
-      </section> */}
+   
 
       {/* Video Section */}
       <section>
@@ -176,6 +169,42 @@ export default function Home() {
           <video src={jietmp4} autoPlay loop muted />
         </div>
       </section>
+
+       {/* FAQs Section */}
+       <section id="faq_main_body">
+       <div className="title"  data-aos="fade-down">
+          <h1 className="dark">FAQs</h1>
+          <div className="line"></div>
+        </div>
+        <div className="wrapper-faq" data-aos="fade-up">
+          {[
+            { question: 'How do I verify my email?', answer: 'Click the link in the verification email from verify@codepen.io...' },
+            { question: 'How do I reset my password?', answer: 'Click "Forgot Password" on the login page and follow the instructions.' },
+            { question: 'How do I Check Bus Routes?', answer: 'Click "Forgot Password" on the login page and follow the instructions.' },
+            // Add more FAQs as needed
+          ].map((faq, index) => (
+            <div className="container-faq" key={index}>
+              <div
+                className={`question-faq ${activeIndex === index ? 'active' : ''}`}
+                onClick={() => toggleFAQ(index)}
+              >
+                {faq.question}
+              </div>
+              <div
+                className="answercont-faq"
+                style={{
+                  maxHeight: activeIndex === index ? '200px' : '0',
+                  overflow: 'hidden',
+                  transition: 'max-height 0.3s ease',
+                }}
+              >
+                <div className="answer-faq">{faq.answer}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      
     </>
   );
 }

@@ -5,6 +5,7 @@ import Navbar from './component/Navbar/Navbar';
 import Contactus from './component/ContactUs/Contactus';
 import Login from './component/Login/Login';
 import OtpInput from './component/Login/otp-login/OtpInput';
+import Footer from './component/Footer/Footer';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           
            
          </Routes>
-    
+         <Footer/>
        </Router>
    </>
   );

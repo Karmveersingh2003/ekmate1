@@ -1,41 +1,39 @@
-import React, { useState,useEffect } from 'react';
-import "./navbar.css"
+import React, { useState, useEffect } from 'react';
+import "./navbar.css";
 import { FaRegMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa6";
-import menubtn from "../Home/img/menu-btn.png"
-
+import menubtn from "../Home/img/menu-btn.png";
+import logo from "../Home/img/ekmate_logo.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const [theme,setTheme]=useState(false);
-  
+  const handleThemeToggle = () => {
+    setTheme(!theme);
+  };
 
-  const handleClick=()=>{
-      setTheme(!theme)
-  }
-  useEffect(()=>{
-      if(theme==true){
-          document.body.classList.add("dark");
-      }else{
-          document.body.classList.remove("dark");
-      }
-      
-  })
-  
+  useEffect(() => {
+    if (theme) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
-  <>
-   {/* Navbar */}
-   <nav className="navbar glass" style={{ height: '70px' }}>
+    <>
+      <nav className="navbar glass" style={{ height: '70px' }}>
+        {/* Logo */}
         <span>
           <a href="#home" style={{ display: 'flex', alignItems: 'center' }}>
             <img
               className="img2"
-              src=""
+              src={logo}
               width="40"
               style={{ margin: '-25px -10px -25px -20px' }}
               alt="Logo"
@@ -43,61 +41,31 @@ export default function Navbar() {
             <h1 className="logo">&nbsp;EkMate</h1>
           </a>
         </span>
-        <ul className="nav-links">
-          <li>
-            <a href="/"  className="active cir_border">
-              Home
 
-            </a>
-          </li>
-          <li>
-            <a href="#events"  className="cir_border">
-             About
-            </a>
-          </li>
-          <li>
-            <a href="/contact"  className="cir_border">
-              Contact-Us
-            </a>
-          </li>
-          <li>
-            <a href="#tours"  className="cir_border">
-            Get Started
-            </a>
-          </li>
-          
+        {/* Desktop Nav Links */}
+        <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+          <li><a href="/" className="active cir_border">Home</a></li>
+          <li><a href="#events" className="cir_border">About</a></li>
+          <li><a href="/contact" className="cir_border">Contact-Us</a></li>
+          <li><a href="#tours" className="cir_border">Get Started</a></li>
           <li>
             <div>
-              <input type="checkbox" className="checkbox dark" id="checkbox" />
-              <label htmlFor="checkbox" className="label">
-              <button onClick={handleClick}>{theme? <FaRegMoon/>:<FaSun/>}</button>
-                <i className="fa fa-moon-o"><FaRegMoon/></i>
-                <i className="fa fa-sun-o"><FaSun/></i>
-                <div className="ball"></div>
-              </label>
+              <button onClick={handleThemeToggle}>
+                {theme ? <FaRegMoon /> : <FaSun />}
+              </button>
             </div>
           </li>
         </ul>
-        
-         <img
-         height={20}
-        src={menubtn}
-        alt="Menu Button"
-        className="menu-btn"
-        onClick={toggleMenu}
-      />
 
-<ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/login">login</a></li>
-        <li><a href="#quad">Section 4</a></li>
-        <li><a href="#quint">Section 5</a></li>
-        <li><a href="#hex">Section 6</a></li>
-        <li><a href="#hept">Section 7</a></li>
-      </ul>
+        {/* Mobile Menu Button */}
+        <img
+          height={20}
+          src={menubtn}
+          alt="Menu Button"
+          className="menu-btn"
+          onClick={toggleMenu}
+        />
       </nav>
-
-  </>
-  )
+    </>
+  );
 }
