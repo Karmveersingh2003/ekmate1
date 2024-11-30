@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './home.css';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS
@@ -21,7 +21,7 @@ export default function Home() {
       once: true, // Whether animation should happen only once
     });
   }, []);
-  
+
   // FAQs
   // FAQ Accordion State
   const [activeIndex, setActiveIndex] = useState(null);
@@ -40,12 +40,9 @@ export default function Home() {
           <div className="line"></div>
           <h1>Your One-Stop Solution For Campus Transportation Management </h1>
           <a
-            href="#about"
+            href="#college"
             className="ctn"
-            onClick={() => {
-              document.querySelector('#quad').style.border = '2px solid whitesmoke';
-              document.querySelector('#quad').style.borderRadius = '20px';
-            }}
+
           >
             Learn more
           </a>
@@ -137,7 +134,7 @@ export default function Home() {
 
       {/* About the College */}
       <section>
-        <div className="title"  data-aos="fade-up">
+        <div className="title" data-aos="fade-up">
           <h1 className="dark">About the College</h1>
           <div className="line"></div>
         </div>
@@ -157,7 +154,7 @@ export default function Home() {
         </div>
 
       </section>
-   
+
 
       {/* Video Section */}
       <section>
@@ -170,9 +167,9 @@ export default function Home() {
         </div>
       </section>
 
-       {/* FAQs Section */}
-       <section id="faq_main_body">
-       <div className="title"  data-aos="fade-down">
+      {/* FAQs Section */}
+      <section id="faq_main_body">
+        <div className="title" data-aos="fade-down">
           <h1 className="dark">FAQs</h1>
           <div className="line"></div>
         </div>
@@ -204,7 +201,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      
+
     </>
   );
 }

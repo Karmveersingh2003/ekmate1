@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import OTPInput from 'react-otp-input';
 import { ColorRing } from 'react-loader-spinner';
+import Home from '../Home/Home';
 import './login.css';
 
 export default function Login() {
@@ -155,38 +156,44 @@ export default function Login() {
                       <i className="fas fa-lock"></i>
                       <input type="" placeholder="College Email/Phone Number" />
                     </div>
-                    <input onClick={handleOtpLoginClick} type="submit" value="Login" className="button solid" />
+                    <input onClick={Home} type="submit" value="Login" className="button solid" />
                     
                   </form>
 
                   <form className="sign-up-forms">
-                    <h2 className="titles">Sign up</h2>
-                    <div className="input-fields">
-                      <i className="fas fa-user"></i>
-                      <input type="text" placeholder="Name" />
-                    </div>
-                    <div className="input-fields">
-                      <i className="fas fa-lock"></i>
-                      <input type="" placeholder="Registration Number" />
-                    </div>
-                    <div className="input-fields">
-                      <i className="fas fa-envelope"></i>
-                      <input type="email" placeholder="College Mail" />
-                    </div>
-                    <div className="input-fields">
-                      <i className="fas fa-lock"></i>
-                      <input type="" placeholder="Branch" />
-                    </div>
-                    <div className="input-fields">
-                      <i className="fas fa-lock"></i>
-                      <input type="number" placeholder="Year" />
-                    </div>
-                    <div className="input-fields">
-                      <i className="fas fa-lock"></i>
-                      <input type="number" placeholder="Phone Number" />
-                    </div>
-                    <input type="submit" value="Sign up" className="button solid" />
-                  </form>
+  <h2 className="titles">Sign up</h2>
+  <div className="input-fields">
+    <i className="fas fa-user"></i>
+    <input type="text" placeholder="Name" />
+  </div>
+  <div className="input-fields">
+    <i className="fas fa-lock"></i>
+    <input type="" placeholder="Registration Number" />
+  </div>
+  <div className="input-fields">
+    <i className="fas fa-envelope"></i>
+    <input type="email" placeholder="College Mail" />
+  </div>
+  <div className="input-fields">
+    <i className="fas fa-lock"></i>
+    <input type="" placeholder="Branch" />
+  </div>
+  <div className="input-fields">
+    <i className="fas fa-lock"></i>
+    <input type="number" placeholder="Year" />
+  </div>
+  <div className="input-fields">
+    <i className="fas fa-lock"></i>
+    <input type="number" placeholder="Phone Number" />
+  </div>
+  <input 
+    type="button" 
+    value="Sign up" 
+    className="button solid" 
+    onClick={handleOtpLoginClick} 
+  />
+</form>
+
                 </>
               ) : (
                 <OtpLogin onLogin={handleLogin} />
