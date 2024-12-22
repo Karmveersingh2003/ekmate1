@@ -6,6 +6,7 @@ import Contactus from './component/ContactUs/Contactus';
 import Login from './component/Login/Login';
 import OtpInput from './component/Login/otp-login/OtpInput';
 import Footer from './component/Footer/Footer';
+import About from './component/About-us/About';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
            <Route path='/*' element={<h1>error page</h1>}></Route>
            <Route path='/contact' element={<Contactus/>}></Route>
            <Route path='/login' element={<Login/>}></Route>
+           <Route path='/about' element={<About/>}></Route>
            <Route path='/otp' element={<OtpInput/>}></Route>
           
            

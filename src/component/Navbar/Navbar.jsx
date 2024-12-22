@@ -61,7 +61,7 @@ export default function Navbar() {
           </li>
           <li>
             <a
-              href="#events"
+              href="/about"
               className={`cir_border ${activeLink === "About" ? "active" : ""}`}
               onClick={() => handleLinkClick("About")}
             >
@@ -76,7 +76,7 @@ export default function Navbar() {
               }`}
               onClick={() => handleLinkClick("Contact-Us")}
             >
-              Contact-Us
+              Contact
             </a>
           </li>
           <li>

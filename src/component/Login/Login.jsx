@@ -180,15 +180,19 @@ export default function Login() {
   </div>
   <div className="input-fields">
     <i className="fas fa-lock"></i>
-    <input type="number" placeholder="Year" />
+    <input type="" placeholder="Year" />
   </div>
   <div className="input-fields">
     <i className="fas fa-lock"></i>
-    <input type="number" placeholder="Phone Number" />
+    <input type="" placeholder="Phone Number" />
+  </div>
+  <div className="input-fields">
+    <i className="fas fa-lock"></i>
+    <input type="Password" placeholder="Password" />
   </div>
   <input 
     type="button" 
-    value="Sign up" 
+    value="Verify Email" 
     className="button solid" 
     onClick={handleOtpLoginClick} 
   />

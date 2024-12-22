@@ -8,7 +8,8 @@
     margin-top: 3rem;
     display: flex;
     font-family: var(--ff-roboto);
-    
+    justify-content: center;
+    align-items: center;
   }
   
   .forms{

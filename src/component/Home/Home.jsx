@@ -39,65 +39,9 @@ export default function Home() {
           <h2 id="quote">Welcome To EkMate </h2>
           <div className="line"></div>
           <h1>Your One-Stop Solution For Campus Transportation Management </h1>
-          <a
-            href="#college"
-            className="ctn"
-
-          >
-            Learn more
-          </a>
         </div>
       </header>
 
-      {/* Events Section */}
-      <section className="events" id="events">
-        <div className="container">
-          <div className="title" data-aos="fade-up">
-            <h1 className="dark">Upcoming Events</h1>
-            <div className="line"></div>
-          </div>
-          <div className="row">
-            <article className="card col" data-aos="zoom-in">
-              <img className="card-img" src={student} alt="Everest camp trek" />
-              <h4 className="dark">For Students</h4>
-              <p className="font-color">
-                Everest base camp trek is without a doubt, one of the most renowned travel destinations in the world.
-              </p>
-              <a href="#" className="ctn">All Details</a>
-            </article>
-            <article className="card col" data-aos="zoom-in" data-aos-delay="200">
-              <img className="card-img" src={faculty} alt="Walking holidays" />
-              <h4 className="dark">For Faculties</h4>
-              <p className="font-color">
-                Join small guided group walks, enjoy a challenging trek, or a luxury private guided walk which can be made especially for you.
-              </p>
-              <a href="#" className="ctn">All Details</a>
-            </article>
-            <article className="card col" data-aos="zoom-in" data-aos-delay="400">
-              <img className="card-img" src={admin} alt="Andaman Beaches" />
-              <h4 className="dark">For Admins</h4>
-              <p className="font-color">
-                Diving in Andaman Beaches is exceptional. The coastal belt surroundings are one of the richest coral reef ecosystems in the world.
-              </p>
-              <a href="#" className="ctn">All Details</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      {/* Explore Section */}
-      <section className="explore" id="explore">
-        <div className="explore-content" data-aos="fade-up">
-          <h1>EXPLORE THE EkMate</h1>
-          <div className="line"></div>
-          <p>
-            “Effortless College Commutes: Your Bus Schedules at Your Fingertips!” <br /> <br />
-            “Track your bus, plan your commute, and never miss a ride with our real-time bus management system." <br />
-          </p>
-          <br />
-          <a href="#" className="ctn">Download App</a>
-        </div>
-      </section>
 
       {/* Key Features Section */}
       <section className="events" id="events">
@@ -131,6 +75,57 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Events Section
+      <section className="events" id="events">
+        <div className="container">
+          <div className="title" data-aos="fade-up">
+            <h1 className="dark">Upcoming Events</h1>
+            <div className="line"></div>
+          </div>
+          <div className="row">
+            <article className="card col" data-aos="zoom-in">
+              <img className="card-img" src={student} alt="Everest camp trek" />
+              <h4 className="dark">For Students</h4>
+              <p className="font-color">
+                Everest base camp trek is without a doubt, one of the most renowned travel destinations in the world.
+              </p>
+              <a href="#" className="ctn">All Details</a>
+            </article>
+            <article className="card col" data-aos="zoom-in" data-aos-delay="200">
+              <img className="card-img" src={faculty} alt="Walking holidays" />
+              <h4 className="dark">For Faculties</h4>
+              <p className="font-color">
+                Join small guided group walks, enjoy a challenging trek, or a luxury private guided walk which can be made especially for you.
+              </p>
+              <a href="#" className="ctn">All Details</a>
+            </article>
+            <article className="card col" data-aos="zoom-in" data-aos-delay="400">
+              <img className="card-img" src={admin} alt="Andaman Beaches" />
+              <h4 className="dark">For Admins</h4>
+              <p className="font-color">
+                Diving in Andaman Beaches is exceptional. The coastal belt surroundings are one of the richest coral reef ecosystems in the world.
+              </p>
+              <a href="#" className="ctn">All Details</a>
+            </article>
+          </div>
+        </div>
+      </section> */}
+
+      {/* Explore Section */}
+      <section className="explore" id="explore">
+        <div className="explore-content" data-aos="fade-up">
+          <h1>EXPLORE THE EkMate</h1>
+          <div className="line"></div>
+          <p>
+            “Effortless College Commutes: Your Bus Schedules at Your Fingertips!” <br /> <br />
+            “Track your bus, plan your commute, and never miss a ride with our real-time bus management system." <br />
+          </p>
+          <br />
+          <a href="#" className="ctn">Learn More</a>
+        </div>
+      </section>
+
 
       {/* About the College */}
       <section>
